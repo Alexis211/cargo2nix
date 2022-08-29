@@ -13,7 +13,7 @@ rec {
         inherit url rev ref;
       };
     in
-      /. + builtins.readFile (runCommand "find-crate-${name}-${version}"
+      builtins.readFile (runCommand "find-crate-${name}-${version}"
         { nativeBuildInputs = [ jq remarshal ]; }
         ''
           shopt -s globstar
